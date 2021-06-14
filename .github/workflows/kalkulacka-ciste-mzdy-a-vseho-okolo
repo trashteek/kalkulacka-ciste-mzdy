@@ -1,0 +1,302 @@
+#include <iostream>
+using namespace std;
+float cistaMzda (float prijem, float cas){
+	float cistaMzda;
+	cistaMzda = ((((prijem * cas )*4))*0.74)+2320;
+	return cistaMzda;
+}
+float odvodDane (float prijem, float cas){
+	float odvodDane;
+	odvodDane =((prijem * cas)*4)*0.15;
+	return odvodDane;
+}
+float socAZdrav (float prijem, float cas){
+	float socAZdrav;
+	socAZdrav = ((prijem * cas)*4)*0.11;
+	return socAZdrav;
+}
+float hrubaMzda (float prijem, float cas){
+	float hrubaMzda;
+	hrubaMzda = (prijem * cas)*4;
+	return hrubaMzda;
+}
+float casOdpracovany (float cas){
+    float casOdpracovany;
+    casOdpracovany = cas * 4;
+    return casOdpracovany;
+}
+float dvaPrijmy (float prijem, float cas, float prijemm, float cass){
+    float dvaPrijmy;
+    dvaPrijmy = ((((prijem * cas + prijemm * cass )*4))*0.74)+4640;
+    return dvaPrijmy;
+}
+float dvaPrijmySZ (float prijem, float cas, float prijemm, float cass){
+    float dvaPrijmySZ;
+    dvaPrijmySZ = ((((prijem * cas + prijemm * cass )*4))*0.11);
+    return dvaPrijmySZ;
+}
+float dvaPrijmyDan (float prijem, float cas, float prijemm, float cass){
+    float dvaPrijmyDan;
+    dvaPrijmyDan = ((((prijem * cas + prijemm * cass )*4))*0.15);
+    return dvaPrijmyDan;
+}
+float dveHrubeMzdy (float prijem, float cas,float prijemm, float cass){
+	float dveHrubeMzdy;
+    dveHrubeMzdy = (prijem * cas+prijemm*cass)*4;
+	return dveHrubeMzdy;
+}
+float cassOdpracovany (float cas,float cass){
+    float cassOdpracovany;
+    cassOdpracovany = (cas+cass  )* 4;
+    return cassOdpracovany;
+}
+float triPrijmy (float prijem, float cas, float prijemm, float cass, float prijemmm, float casss){
+    float triPrijmy;
+    triPrijmy = ((((prijem * cas + prijemm * cass + prijemmm * casss )*4))*0.74)+6960;
+    return triPrijmy;
+}
+float triPrijmySZ (float prijem, float cas, float prijemm, float cass, float prijemmm, float casss){
+    float triPrijmySZ;
+    triPrijmySZ = ((((prijem * cas + prijemm * cass + prijemmm * casss )*4))*0.11);
+    return triPrijmySZ;
+}
+float triPrijmyHrub (float prijem, float cas, float prijemm, float cass, float prijemmm, float casss){
+    float triPrijmyHrub;
+    triPrijmyHrub = (((prijem * cas + prijemm * cass + prijemmm * casss )*4));
+    return triPrijmyHrub;
+}
+float triPrijmyDan (float prijem, float cas, float prijemm, float cass, float prijemmm, float casss){
+    float triPrijmyDan;
+    triPrijmyDan = ((((prijem * cas + prijemm * cass + prijemmm * casss )*4))*0.15);
+    return triPrijmyDan;
+}
+float casssOdpracovany (float cas,float cass,float casss){
+    float casssOdpracovany;
+    casssOdpracovany = (cas+cass+casss  )* 4;
+    return casssOdpracovany;
+}
+float ctyriPrijmyDan (float prijem, float cas, float prijemm, float cass, float prijemmm, float casss, float prijemmmm, float cassss){
+    float ctyriPrijmyDan;
+    ctyriPrijmyDan = ((((prijem * cas + prijem * cass + prijemmm * casss + prijemmmm * cassss) *4))*0.15);
+    return ctyriPrijmyDan;
+}
+float ctyriPrijmySZ (float prijem, float cas, float prijemm, float cass, float prijemmm, float casss, float prijemmmm, float cassss){
+    float ctyriPrijmySZ;
+    ctyriPrijmySZ = ((((prijem * cas + prijemm * cass + prijemmm * casss + prijemmmm * cassss)*4))*0.11);
+    return ctyriPrijmySZ;
+}
+float ctyriPrijmyHrub (float prijem, float cas, float prijemm, float cass, float prijemmm, float casss, float prijemmmm, float cassss){
+    float ctyriPrijmyHrub;
+    ctyriPrijmyHrub = (prijem * cas + prijemm * cass + prijemmm * casss + prijemmmm * cassss)*4;
+    return ctyriPrijmyHrub;
+}
+float ctyriPrijmyCisty (float prijem, float cas, float prijemm, float cass, float prijemmm, float casss, float prijemmmm, float cassss){
+    float ctyriPrijmyCisty;
+    ctyriPrijmyCisty = ((((prijem * cas + prijemm * cass + prijemmm * casss + prijemmmm * cassss)*4))*0.76)+9280;
+    return ctyriPrijmyCisty;
+}
+float cassssOdpracovany (float cas,float cass,float casss,float cassss){
+    float cassssOdpracovany;
+    cassssOdpracovany = (cas+cass+casss+cassss  )* 4;
+    return cassssOdpracovany;
+}
+int main(){
+float prijem, cas,  prijemm,  cass,  prijemmm,  casss,  prijemmmm,  cassss;
+int b;
+do{
+cout << "Zadejte pocet zavazku: 1-1 zavazek 2-2 zavazky 3-3 zavazky 4-4 zavazky 5-konec programu: " <<endl;
+cin >> b;
+
+switch (b){
+
+case 1:
+    cout << "Zadejte kolik korun mate nasmlouvany plat na hodinu: " <<endl;
+    cin >> prijem;
+    cout << "Zadejte kolik hodin tydne odpracujete: " <<endl;
+   cin >> cas;
+    cout << "Vase cista mzda na mesic cini: " <<cistaMzda(prijem, cas) <<endl;
+    cout << "Na danich odvedete: " <<odvodDane(prijem, cas) <<endl;
+    cout << "Na socialnim a zdravotnim odvedete: " <<socAZdrav(prijem, cas) <<endl;
+    cout << "Vase hruba mzda na mesic cini: " <<hrubaMzda(prijem, cas) <<endl;
+    cout << "Celkove jste odpracoval/a: " <<casOdpracovany(cas);
+    cout << " hodin" <<endl;
+   if (cas > 40){
+        cout << "Vas uvazek je plny " <<endl;
+   }else if (cas < 40 ){
+       cout << "Vas uvazek je castecny " <<endl;
+   }
+    break;
+case 2:
+     cout << "Zadejte kolik korun mate nasmlouvany plat na hodinu: " <<endl;
+    cin >> prijem;
+    cout << "Zadejte kolik hodin tydne odpracujete: " <<endl;
+   cin >> cas;
+    cout << "Vase cista mzda na mesic cini: " <<cistaMzda(prijem, cas) <<endl;
+    cout << "Na danich odvedete: " <<odvodDane(prijem, cas) <<endl;
+    cout << "Na socialnim a zdravotnim odvedete: " <<socAZdrav(prijem, cas) <<endl;
+    cout << "Vase hruba mzda na mesic cini: " <<hrubaMzda(prijem, cas) <<endl;
+    cout << "Celkove jste odpracoval/a: " <<casOdpracovany(cas);
+    cout << " hodin" <<endl;
+     if (cas > 40){
+        cout << "Vas uvazek je plny " <<endl;
+   }else if (cas < 40 ){
+       cout << "Vas uvazek je castecny " <<endl;
+   }
+     cout << "Zadejte kolik korun mate nasmlouvany plat na hodinu: " <<endl;
+    cin >> prijemm;
+    cout << "Zadejte kolik hodin tydne odpracujete: " <<endl;
+   cin >> cass;
+    cout << "Vase cista mzda na mesic cini: " <<cistaMzda(prijemm, cass) <<endl;
+    cout << "Na danich odvedete: " <<odvodDane(prijemm, cass) <<endl;
+    cout << "Na socialnim a zdravotnim odvedete: " <<socAZdrav(prijemm, cass) <<endl;
+    cout << "Vase hruba mzda na mesic cini: " <<hrubaMzda(prijemm, cass) <<endl;
+    cout << "Celkove jste odpracoval/a: " <<casOdpracovany(cass);
+    cout << " hodin" <<endl;
+     if (cas > 40){
+        cout << "Vas uvazek je plny " <<endl;
+   }else if (cas < 40 ){
+       cout << "Vas uvazek je castecny " <<endl;
+   }
+    cout << "Oba uvazky vam prinesou za mesic mzdu ve vysi: " <<dvaPrijmy(prijem, cas, prijemm, cass) <<endl;
+    cout << "Na danich odvedete: " <<dvaPrijmyDan(prijem, cas, prijemm, cass) <<endl;
+    cout << "Na socialnim a zdravotnim odvedete: " <<dvaPrijmySZ(prijem, cas, prijemm, cass) <<endl;
+    cout << "Vase hruba mzda cini: " <<dveHrubeMzdy(prijem, cas, prijemm, cass) <<endl;
+    cout << "Celkem odpracujete: " <<cassOdpracovany(cas, cass);
+    cout << "hodin " <<endl;
+    break;
+case 3:
+  cout << "Zadejte kolik korun mate nasmlouvany plat na hodinu: " <<endl;
+    cin >> prijem;
+    cout << "Zadejte kolik hodin tydne odpracujete: " <<endl;
+   cin >> cas;
+    cout << "Vase cista mzda na mesic cini: " <<cistaMzda(prijem, cas) <<endl;
+    cout << "Na danich odvedete: " <<odvodDane(prijem, cas) <<endl;
+    cout << "Na socialnim a zdravotnim odvedete: " <<socAZdrav(prijem, cas) <<endl;
+    cout << "Vase hruba mzda na mesic cini: " <<hrubaMzda(prijem, cas) <<endl;
+    cout << "Celkove jste odpracoval/a: " <<casOdpracovany(cas);
+    cout << " hodin" <<endl;
+     if (cas > 40){
+        cout << "Vas uvazek je plny " <<endl;
+   }else if (cas < 40 ){
+       cout << "Vas uvazek je castecny " <<endl;
+   }
+     cout << "Zadejte kolik korun mate nasmlouvany plat na hodinu: " <<endl;
+    cin >> prijemm;
+    cout << "Zadejte kolik hodin tydne odpracujete: " <<endl;
+   cin >> cass;
+    cout << "Vase cista mzda na mesic cini: " <<cistaMzda(prijemm, cass) <<endl;
+    cout << "Na danich odvedete: " <<odvodDane(prijemm, cass) <<endl;
+    cout << "Na socialnim a zdravotnim odvedete: " <<socAZdrav(prijemm, cass) <<endl;
+    cout << "Vase hruba mzda na mesic cini: " <<hrubaMzda(prijemm, cass) <<endl;
+    cout << "Celkove jste odpracoval/a: " <<casOdpracovany(cass);
+    cout << " hodin" <<endl;
+     if (cass    > 40){
+        cout << "Vas uvazek je plny " <<endl;
+   }else if (cass    < 40 ){
+       cout << "Vas uvazek je castecny " <<endl;
+   }
+      cout << "Zadejte kolik korun mate nasmlouvany plat na hodinu: " <<endl;
+    cin >> prijemmm;
+    cout << "Zadejte kolik hodin tydne odpracujete: " <<endl;
+   cin >> casss;
+    cout << "Vase cista mzda na mesic cini: " <<cistaMzda(prijemmm, casss) <<endl;
+    cout << "Na danich odvedete: " <<odvodDane(prijemmm, casss) <<endl;
+    cout << "Na socialnim a zdravotnim odvedete: " <<socAZdrav(prijemm, casss) <<endl;
+    cout << "Vase hruba mzda na mesic cini: " <<hrubaMzda(prijemmm, casss) <<endl;
+    cout << "Celkove jste odpracoval/a: " <<casOdpracovany(casss);
+    cout << " hodin" <<endl;
+     if (casss   > 40){
+        cout << "Vas uvazek je plny " <<endl;
+   }else if (casss   < 40 ){
+       cout << "Vas uvazek je castecny " <<endl;
+   }
+    cout << "Vsechny uvazky vam prinesou za mesic mzdu ve vysi: " <<triPrijmy(prijem, cas, prijemm, cass, prijemmm, casss) <<endl;
+    cout << "Na danich odvedete: " <<triPrijmyDan(prijem, cas, prijemm, cass, prijemmm, casss) <<endl;
+    cout << "Na socialnim a zdravotnim odvedete: " <<triPrijmySZ(prijem, cas, prijemm, cass, prijemmm, casss) <<endl;
+    cout << "Vase hruba mzda cini: " <<triPrijmyHrub(prijem, cas, prijemm, cass, prijemmm, casss) <<endl;
+    cout << "Celkem odpracujete: " <<casssOdpracovany(cas, cass, casss);
+    cout << "hodin " <<endl;
+    break;
+case 4:
+    cout << "Zadejte kolik korun mate nasmlouvany plat na hodinu: " <<endl;
+    cin >> prijem;
+    cout << "Zadejte kolik hodin tydne odpracujete: " <<endl;
+   cin >> cas;
+    cout << "Vase cista mzda na mesic cini: " <<cistaMzda(prijem, cas) <<endl;
+    cout << "Na danich odvedete: " <<odvodDane(prijem, cas) <<endl;
+    cout << "Na socialnim a zdravotnim odvedete: " <<socAZdrav(prijem, cas) <<endl;
+    cout << "Vase hruba mzda na mesic cini: " <<hrubaMzda(prijem, cas) <<endl;
+    cout << "Celkove jste odpracoval/a: " <<casOdpracovany(cas);
+    cout << " hodin" <<endl;
+     if (cas > 40){
+        cout << "Vas uvazek je plny " <<endl;
+   }else if (cas < 40 ){
+       cout << "Vas uvazek je castecny " <<endl;
+   }
+     cout << "Zadejte kolik korun mate nasmlouvany plat na hodinu: " <<endl;
+    cin >> prijemm;
+    cout << "Zadejte kolik hodin tydne odpracujete: " <<endl;
+   cin >> cass;
+    cout << "Vase cista mzda na mesic cini: " <<cistaMzda(prijemm, cass) <<endl;
+    cout << "Na danich odvedete: " <<odvodDane(prijemm, cass) <<endl;
+    cout << "Na socialnim a zdravotnim odvedete: " <<socAZdrav(prijemm, cass) <<endl;
+    cout << "Vase hruba mzda na mesic cini: " <<hrubaMzda(prijemm, cass) <<endl;
+    cout << "Celkove jste odpracoval/a: " <<casOdpracovany(cass);
+    cout << " hodin" <<endl;
+     if (cass    > 40){
+        cout << "Vas uvazek je plny " <<endl;
+   }else if (cass    < 40 ){
+       cout << "Vas uvazek je castecny " <<endl;
+   }
+      cout << "Zadejte kolik korun mate nasmlouvany plat na hodinu: " <<endl;
+    cin >> prijemm;
+    cout << "Zadejte kolik hodin tydne odpracujete: " <<endl;
+   cin >> cass;
+    cout << "Vase cista mzda na mesic cini: " <<cistaMzda(prijemm, cass) <<endl;
+    cout << "Na danich odvedete: " <<odvodDane(prijemm, cass) <<endl;
+    cout << "Na socialnim a zdravotnim odvedete: " <<socAZdrav(prijemm, cass) <<endl;
+    cout << "Vase hruba mzda na mesic cini: " <<hrubaMzda(prijemm, cass) <<endl;
+    cout << "Celkove jste odpracoval/a: " <<casOdpracovany(cass);
+    cout << " hodin" <<endl;
+     if (casss   > 40){
+        cout << "Vas uvazek je plny " <<endl;
+   }else if (casss   < 40 ){
+       cout << "Vas uvazek je castecny " <<endl;
+   }
+      cout << "Zadejte kolik korun mate nasmlouvany plat na hodinu: " <<endl;
+    cin >> prijemmmm;
+    cout << "Zadejte kolik hodin tydne odpracujete: " <<endl;
+   cin >> cassss;
+    cout << "Vase cista mzda na mesic cini: " <<cistaMzda(prijemmmm, cassss) <<endl;
+    cout << "Na danich odvedete: " <<odvodDane(prijemmmm, cassss) <<endl;
+    cout << "Na socialnim a zdravotnim odvedete: " <<socAZdrav(prijemm, cassss) <<endl;
+    cout << "Vase hruba mzda na mesic cini: " <<hrubaMzda(prijemmmm, cassss) <<endl;
+    cout << "Celkove jste odpracoval/a: " <<casOdpracovany(cassss);
+    cout << " hodin" <<endl;
+     if (cassss  > 40){
+        cout << "Vas uvazek je plny " <<endl;
+   }else if (cassss < 40 ){
+       cout << "Vas uvazek je castecny " <<endl;
+   }
+    cout << "Vsechny uvazky vam prinesou za mesic mzdu ve vysi: " <<ctyriPrijmyCisty(prijem, cas, prijemm, cass, prijemmm, casss, prijemmmm, cassss) <<endl;
+    cout << "Na danich odvedete: " <<ctyriPrijmyDan(prijem, cas, prijemm, cass, prijemmm, casss, prijemmmm, cassss) <<endl;
+    cout << "Na socialnim a zdravotnim odvedete: " <<ctyriPrijmySZ(prijem, cas, prijemm, cass, prijemmm, casss, prijemmmm, cassss) <<endl;
+    cout << "Vase hruba mzda cini: " <<ctyriPrijmyHrub(prijem, cas, prijemm, cass, prijemmm, casss, prijemmmm, cassss) <<endl;
+    cout << "Celkem odpracujete: " <<cassssOdpracovany(cas, cass, casss, cassss);
+    cout << "hodin " <<endl;
+    break;
+
+case 5:
+    cout << "Ukoncil/a jste program, preji hezky den :)";
+    break;
+default:
+    cout << "Zadal/a jste spatnou hodnotu!";
+    break;
+
+
+
+}
+
+}
+while(b < 4);
+}
